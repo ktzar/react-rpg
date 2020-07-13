@@ -4,23 +4,20 @@ import styled from 'styled-components';
 import HealthBar from "./HealthBar";
 
 interface CharacterProps {
-    name: string,
-    health: number,
-    avatar: string,
+    name: string;
+    health: number;
+    avatar: string;
 }
 
 const Name = styled.div`
     float: left;
     width: 100px;
+    margin-top:50px;
 `;
 
-export class Character extends React.Component<CharacterProps, undefined> {
-    render() {
-        const { name, health, avatar } = this.props;
-        return <div>
-            <Name>{name}</Name> <HealthBar value={health} />
-            <img src={avatar} alt={`Avatar for ${name}`} />
-        </div>;
-    }
+export const Character = ({name, health, avatar}: CharacterProps) =>  {
+    return <div>
+        <Name>{name}</Name> <HealthBar value={health} />
+        <img height="75px" src={avatar} alt={`Avatar for ${name}`} />
+    </div>;
 };
-

@@ -5,6 +5,8 @@
         "noImplicitAny": false,
         "module": "commonjs",
         "target": "es5",
+        "esModuleInterop": true,
+        "moduleResolution": "ES6",
         "jsx": "react",
         "lib": ["es5", "es6", "dom"]
     },

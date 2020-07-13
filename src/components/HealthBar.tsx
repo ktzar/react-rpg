@@ -5,10 +5,11 @@ interface HealthBarProps {
     value: number
 }
 
-const pixelToHealthRadio = 2;
+const pixelToHealthRatio = 10;
+const maxHealth = 10;
 
 const Wrapper = styled.div`
-    width: ${() => pixelToHealthRadio * 100}px;
+    width: ${() => pixelToHealthRatio * maxHealth}px;
     height: 10px;
     display: flex;
     flex-direction: row;
@@ -19,7 +20,7 @@ const Wrapper = styled.div`
 `;
 
 const Bar = styled.div`
-    width: ${props => props.value * 2}px;
+    width: ${props => props.value * pixelToHealthRatio}px;
     display: flex;
     background: linear-gradient(270deg, #ff1900, #f9bd00);
     background-size: 400% 400%;
